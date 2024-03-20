@@ -1,0 +1,1510 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & System Programming
+\end_layout
+
+\begin_layout Standard
+\noindent
+Lecturer Acuña (6), UGTA Lisonbee (2)
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 1/23/2023
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 2 Sample Problems - C Programming II
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this sample problem set, we will practice concepts of the C programming
+ language.
+\end_layout
+
+\begin_layout Itemize
+Length: 60 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1-Q3, Q5-Q7.
+ (optional: Q4, Q8)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\;$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Memory Allocation
+\end_layout
+
+\begin_layout Enumerate
+[Acuña] Consider the following snippet of code.
+ [4 points total]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct point_2d {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int x;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int y;
+\end_layout
+
+\begin_layout Plain Layout
+
+    Color col;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  point_2d* data[5];
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = 0; i < 5; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    point_2d tmp;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tmp.x = i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tmp.y = i * i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    data[i] = &tmp;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = 0; i < 5; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("Point #%d: %d, %d", i, data[i]->x, data[i]->y);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+What will be the output? 
+\series bold
+Trace this code manually, do not run it.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+"Point #0: 4, 16", "Point #1: 4, 16", "Point #2: 4, 16", "Point #3: 4, 16",
+ and "Point #4: 4, 16".
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Why does the program give that output? Explain in terms of memory and pointer
+ usage.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Each iteration of the loop is getting the address of the same piece of memory.
+ Since the last thing assigned to that place is the 4/16 point, then the
+ display will show that value.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following (incorrect) function which removes the head
+ node in a globally defined list called 
+\emph on
+my_list
+\emph default
+.
+ The struct 
+\emph on
+grade_node
+\emph default
+ is used to represent a node containing grade information in a linked list
+ of grades.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct grade_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int value;
+\end_layout
+
+\begin_layout Plain Layout
+
+    char assignment[255];
+\end_layout
+
+\begin_layout Plain Layout
+
+    struct grade_node* next;
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct grade_node* my_list = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void remove_node() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    free(my_list);
+\end_layout
+
+\begin_layout Plain Layout
+
+    if(my_list != null)
+\end_layout
+
+\begin_layout Plain Layout
+
+      my_list = my_list->next;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+What is the syntax error in remove_node?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+NULL in C is defined in all caps (because it is a macro), using 'null' will
+ trigger a compiler error.
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+What is the logical error in remove_node?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+Using free(my_list) prevents us from being able to access the pointer to
+ the next element for the head node of the list.
+ In other words, the list is no longer accessible.
+ Instead we should store the pointer to the current head of the list in
+ a temp node first.
+ Then, we need to set head's next node to be new lists's head.
+ Temp node can now be removed:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void remove_node() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    if(my_list != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        grade_node* tmp = my_list;
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+        my_list = my_list->next;
+\end_layout
+
+\begin_layout Plain Layout
+
+  	  free(tmp);
+\end_layout
+
+\begin_layout Plain Layout
+
+  	  tmp = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+\size larger
+Defining New Types
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the problem of padding the following structure, and answer
+ the three questions below.
+ Assume that you are compiling on a system with a 32-bit architecture.
+ [4 points total]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct bmp_header {
+\end_layout
+
+\begin_layout Plain Layout
+
+       char creator_name[254];
+\end_layout
+
+\begin_layout Plain Layout
+
+       int width;
+\end_layout
+
+\begin_layout Plain Layout
+
+       int height;
+\end_layout
+
+\begin_layout Plain Layout
+
+       char signature_rgb[2];
+\end_layout
+
+\begin_layout Plain Layout
+
+       int offset_pixels;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+What is the size of this struct as defined?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+Total size of structure = ( 254 + 2 ) + 4 + 4 + (2 + 2) + 4 = 272 bytes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+char creator_name[254]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+(padding)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+int width 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+int height 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+char signature_rgb[2]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+(padding)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+int offset_pixels
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+254 bytes 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+2 bytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+4 bytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+4 bytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+2 bytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+2 bytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+4 bytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+How much space would be wasted with word length padding?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+Total size of padding = 2 bytes + 2 bytes = 4 bytes
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+[Acuña] One of the issues with using unions is that it can be unclear which
+ element in the union is the one currently being used.
+ Suggest a mechanism to indicate which element is active.
+ [2 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+One idea would be to create an enumeration which contains an element for
+ each of the possible pieces of data that the union contains.
+ Then, a variable of the union type can be wrapped with a struct which also
+ contains a variable of the new enum type.
+ The result will be that the union will have "metadata" attached that will
+ indicated how it is being used.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Parameters, Scope, and Pointers
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider two possible functions for adding together two xyz points:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct point add_points(struct point_3d p1, struct point_3d p2)
+\end_layout
+
+\begin_layout Plain Layout
+
+struct point* add_points(struct point_3d* p1, struct point_3d* p2) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Which of these functions should we expect to operate more efficiently and
+ why? (Assume that you are compiling on a system with a 32-bit architecture.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+The second function, which uses pointers, should be a little more efficient.
+ In the first function, the execution environment has to make copies of
+ the entire point structures, about 12-bytes each, to make them available
+ as local variables in a stack frame.
+ In the second, only the address (4-bytes) for each of them will need to
+ be copied.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following function which adds a new node to the front
+ of a list passed as a parameter called 
+\emph on
+param_list
+\emph default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct grade_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+    //see previous question.
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void add_node(grade_node* param_list, grade_node* node) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    if(node != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      node->next = param_list;
+\end_layout
+
+\begin_layout Plain Layout
+
+      param_list = node;
+\end_layout
+
+\begin_layout Plain Layout
+
+   }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is it possible for this function ever to work incorrectly? If so, under
+ what conditions does it fail?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Linked Lists
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Using the template provided, 
+\series bold
+implement
+\series default
+ the function 'hide_nums' that traverses a singly linked list of chars,
+ and for every instance of a number (hint: ASCII values 48-57 correspond
+ to numbers 0-9) it is replaced with a space (ASCII value 32).
+ You can assume that 'sequence' is already initialized with a list of chars,
+ with the address of 'sequence' pointing to the head of the list.
+ Furthermore, the end of the list is represented by a node containing a
+ null terminator.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct char_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char data;
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* next;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct char_node* sequence = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void hide_nums() {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct char_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char data;
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* next;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct char_node* sequence = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void hide_nums() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* tmp = sequence; //use tmp var to not lose head of list
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (tmp->data != '
+\backslash
+0') {
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (tmp->data >= 48 && tmp->data <= 57)
+\end_layout
+
+\begin_layout Plain Layout
+
+			tmp->data = 32;
+\end_layout
+
+\begin_layout Plain Layout
+
+		tmp = tmp->next;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Provide a use case for using an array over a linked list, and
+ one for using a linked list over an array.
+ 
+\series bold
+Explain
+\series default
+ why either data structure is better for each use case.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+removing node
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee] (Answers vary)
+\end_layout
+
+\begin_layout Standard
+One use case where an array is better than a linked list is when you have
+ a data set of a fixed size, and being able to quickly index the data is
+ important.
+ One example would be to create a fixed-size array of structs that contain
+ data for an experiment.
+ The size of the array is the number of samples of the experiment, which
+ doesn't change over time.
+ If you're constantly logging data it is important to quickly access different
+ indicies in the data set.
+ A use case where a linked list is better suited is one where the data set
+ is of an undefined size, and being able to quickly find nodes in the list
+ is not as important.
+ An example would be a list of customers who have shopped at a particular
+ establishment.
+ Every time a new customer checks out they are added to the list (which
+ is fast to do), but in general it is not very important to be able to look
+ up customers quickly as that is something that will rarely be done.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

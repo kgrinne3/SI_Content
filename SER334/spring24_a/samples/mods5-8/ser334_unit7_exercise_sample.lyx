@@ -1,0 +1,1297 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & System Programming
+\end_layout
+
+\begin_layout Standard
+\noindent
+Lecturer Acuña (7), UGTA Lisonbee (2)
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 10/13/2021
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 7 Sample Problems - Process Synchronization I
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this exercise, we will review the concepts of Process Synchronization.
+\end_layout
+
+\begin_layout Itemize
+Length: 1:15 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1-Q4, Q6-Q8.
+ (optional: Q9)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Background
+\end_layout
+
+\begin_layout Enumerate
+[Acuña] Consider using an image editor that uses a background thread to
+ regularly save the file being edited to ensure the user doesn't lose data.
+ This image editor contains open, save, close, and apply filter functionality.
+ Does this program contain any possible race condition? 
+\series bold
+Explain.
+ 
+\series default
+[2 points] 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña] 
+\end_layout
+
+\begin_layout Standard
+Yes.
+ There is a chance the image could auto-save, then since images are large
+ and take time to save, the user could make a small change and click save
+ manually.
+ This would result in two threads saving the image at once, with the result
+ that the contents of the file might be corrupted.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider a program which creates three threads and uses each of
+ them to display "SER334" in the same console window.
+ No synchronization occurs.
+ Does this program contain a race condition? 
+\series bold
+Explain.
+ 
+\series default
+Assume that print commands are atomic.
+ [2 points] 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña] 
+\end_layout
+
+\begin_layout Standard
+No.
+ At the end of the program, the state of the program and system will be
+ the same no matter which order the threads execute.
+ For example, the console window will display SER334 three times and since
+ each thread displays the exact same text, the window will look the same.
+ From the final point of view, it doesn't matter which thread printed which
+ SER334 because they are equivalent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+The Critical-Section Problem
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña]
+\series bold
+ Explain
+\series default
+ how an algorithm that solves the critical-section problem would help to
+ address the issues with the bounded buffer problem.
+ [2 points] 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+If we have a solution to the critical-section problem, that we could use
+ it to protect a critical-section of the bounded buffer problem that encapsulate
+s all access to shared memory.
+ If we do this, then can be no conflict in that shared data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] 
+\series bold
+Explain
+\series default
+ how it would be possible to have a situation where programs are making
+ progress but do not have bounded waiting time.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Progress only means that one program is able to do something (and will)
+ when no process is in the critical section.
+ This does not mean there could be another program running which never gets
+ to the critical section, or does not enter it enough times to complete.
+ (If a program doesn't complete, then its waiting time is unbounded.) This
+ can also be caused by the addition of many new processes which have a higher
+ 
+\begin_inset Quotes eld
+\end_inset
+
+priority
+\begin_inset Quotes erd
+\end_inset
+
+ to enter the critical section.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Peterson's Solution
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the code for Peterson's Solution:
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//shared memory
+\end_layout
+
+\begin_layout Plain Layout
+
+int turn = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+bool flag[2] = { false, false };
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//for some process i
+\end_layout
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+    flag[i] = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+    turn = j;
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (flag[j] /* && turn == j */);
+\end_layout
+
+\begin_layout Plain Layout
+
+    //critical section 
+\end_layout
+
+\begin_layout Plain Layout
+
+    flag[i] = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+    //remainder section 
+\end_layout
+
+\begin_layout Plain Layout
+
+} while (true);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Notice that part of the algorithm has been commented out.
+ 
+\series bold
+Explain
+\series default
+ how this changes it's functionality.
+ Will it still solve the critical section problem? 
+\series bold
+Explain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+This give the program a race condition since processes no longer have to
+ wait their term.
+ If both processes run their first line, then both flag indices will be
+ true and both processes will be allowed to entry (even though only one
+ should be going on the turn).
+ If only one process makes it to the while, then the opposite process will
+ start, and then first process will enter as well.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] 
+\series bold
+Explain
+\series default
+ why Peterson's Solution needs to assume that loads/stores are atomic.
+ (
+\series bold
+Hint:
+\series default
+ one reason is related to struct padding/alignment...)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Because instances of the algorithm load/store data in the same turn and
+ flag variables.
+ This is problematic in the case that those values are not word aligned,
+ causing the compiler to generate more than one load/store operation (meaning
+ that store could save the first part of a new value, then a load could
+ read the entire value, and then store would save the remaining bits of
+ the value; potentially producing inconsistent state).
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Synchronization Hardware
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Why would it be appropriate to say that an assignment operation
+ (a = 5;) is typically an atomic operation while an increment operation
+ (a++;) is not? Will your answer be the same for all possible hardware?
+ 
+\series bold
+Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+An assignment operation has only an value on the right side, so it will
+ compile down to just an assignment without any preconditions.
+ Since it's just a single operation, it's naturally atomic.
+ For the increment, we need to emit code that loads, adds, and stores the
+ value.
+ Since we have multiple operations, it cannot be atomic.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mutex Locks
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] The following code creates 4 new threads and increments and prints
+ the contents of a global variable.
+ 
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdlib.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define NUM_THREADS 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pthread_mutex_t lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+int data = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void* runner(void* arg) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_lock(&lock); //ACQUIRE LOCK
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	data++;
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf("Thread %d: %d
+\backslash
+n", *((int*)arg), data);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_unlock(&lock); //RELEASE LOCK
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_t threads[NUM_THREADS];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_init(&lock, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_create(threads[i], NULL, runner, (i + 1));
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_join(threads[i], NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_destroy(&lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+What would happen to the output of the program if the commented lines were
+ removed (ACQUIRE LOCK & RELEASE LOCK)? What impact do these lines have
+ on the program's final state? 
+\series bold
+Justify
+\series default
+ your answer.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+If these lines of code were removed then the value of data could change
+ before a thread has had the chance to print the value.
+ This could mean that the output could look like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Thread #: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 4
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this instance, 'data' was incremented twice by two different threads
+ before it was printed out, so the same value shows up twice.
+ This happened again for the second two threads, causing the output to be
+ 2, 2, 4, 4.
+ The commented lines of code ensure that the value contained in 'data' is
+ always incremented once and then printed.
+ The order of threads that print may change from run to run, but since the
+ data variable is incremented and printed out within the critical section
+ of code (where the thread has the mutex lock) the value of data will always
+ be incremented by 1 each time it's printed.
+\end_layout
+
+\begin_layout Standard
+The program's final state is deterministic in terms of the data value that
+ is printed out by all of the threads.
+ Keeping the commented lines of code means that the output will always look
+ like: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Thread #: 1
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 3
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The '#' can change between runs because it isn't guarenteed which thread
+ will execute the runner function first, however the data value will always
+ be output in the order 1, 2, 3, 4.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Given the following partially implemented code, 
+\series bold
+implement
+\series default
+ the calls to mutex lock and unlock in the appropriate spots in the runner
+ function to ensure that two threads don't write to the same index in the
+ memory array.
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdlib.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define NUM_THREADS 10
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pthread_mutex_t lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+int counter = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+int memory[NUM_THREADS];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void* runner(void* arg) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	memory[counter] = *((int*)arg);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf("Wrote %d at index %d
+\backslash
+n", *((int*)arg), counter);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	counter++;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_t threads[NUM_THREADS];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_init(&lock, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_create(threads[i], NULL, runner, (i * 7));
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_join(threads[i], NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_destroy(&lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void* runner(void* arg) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	mutex_lock(&lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	memory[counter] = *((int*)arg);
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf("Wrote %d at index %d", *((int*)arg), counter);
+\end_layout
+
+\begin_layout Plain Layout
+
+	counter++;
+\end_layout
+
+\begin_layout Plain Layout
+
+	mutex_unlock(&lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

@@ -1,0 +1,1564 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & System Programming
+\end_layout
+
+\begin_layout Standard
+\noindent
+Lecturer Acuña (5), UGTA Lisonbee (3)
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 12/10/2021
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 8 Sample Problems - Process Synchronization II
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this exercise, we will review the concepts of Process Synchronization.
+\end_layout
+
+\begin_layout Itemize
+Length: 1:15 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1-Q3, Q5-Q8
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Semaphores
+\end_layout
+
+\begin_layout Enumerate
+[Acuña] Consider each of the following resource scenarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Sending an email to an email server.
+\end_layout
+
+\begin_layout Enumerate
+Managing a file sharing client's capped connections to peers.
+ 
+\end_layout
+
+\begin_layout Enumerate
+A printer connected to a network.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Managing a local database that can be read or changed by multiple external
+ clients.
+\end_layout
+
+\begin_layout Standard
+For each of these, 
+\series bold
+select
+\series default
+ the appropriate synchronization tool: mutex, semaphore, or none.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Enumerate
+None.
+\end_layout
+
+\begin_layout Enumerate
+A semaphore.
+\end_layout
+
+\begin_layout Enumerate
+A mutex.
+\end_layout
+
+\begin_layout Enumerate
+A mutex.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] 
+\series bold
+Implement
+\series default
+ the wait() operation for a semaphore using the test_and_set() instruction.
+ Assume that you have two methods available: add_this_process(list) which
+ adds the current process to a list, and block() which pauses the current
+ process until it is signaled.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct semaphore* S {
+\end_layout
+
+\begin_layout Plain Layout
+
+    static boolean lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+    struct process_node* list;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int value;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void wait(semaphore* S) {
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña, Silberschatz]
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct semaphore* S {
+\end_layout
+
+\begin_layout Plain Layout
+
+    static int lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+    struct process_node* list;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int value;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void wait(semaphore* S) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while(test_and_set(&S->lock));
+\end_layout
+
+\begin_layout Plain Layout
+
+    S->value--;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (S->value < 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        add_this_process(S->list);
+\end_layout
+
+\begin_layout Plain Layout
+
+        S->lock = 0; //false
+\end_layout
+
+\begin_layout Plain Layout
+
+        block();
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else
+\end_layout
+
+\begin_layout Plain Layout
+
+        S->lock = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider the following partially implemented code:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#define ROW 3
+\end_layout
+
+\begin_layout Plain Layout
+
+#define COL 10
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore S = ROW;
+\end_layout
+
+\begin_layout Plain Layout
+
+int index = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+int data[ROW][COL];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void funct(void* param) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(&S); //LINE 1
+\end_layout
+
+\begin_layout Plain Layout
+
+    int i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < 10; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf(
+\begin_inset Quotes eld
+\end_inset
+
+%d
+\backslash
+n
+\begin_inset Quotes erd
+\end_inset
+
+, data[index][i]);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    index = ++index % 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(&S); //LINE 2
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int num_threads = 12;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_t threads[num_threads];
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (int i = 0; i < num_threads; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        pthread_create(threads[i], NULL, funct, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (int i = 0; i < num_threads; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        pthread_join(threads[i], NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+The provided code is attempting to guard the data resource so that only
+ one thread can access a row of the 2D data array at a time.
+ Is the semaphore properly guarding this resource as is? If not, how could
+ you fix this problem? Justify your answer with regard to how a semaphore
+ guards a resource and/or critical section.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+No, the semaphore in its current state will only ensure that no more than
+ three threads can touch the data array at a time.
+ Because you are accessing data with a global variable and then incrementing
+ it, this becomes a critical section problem.
+ The semaphore allows for multiple threads to run on this crtitical section,
+ and thus mutual exclusion is broken.
+ To fix this issue you would need to either limit the semaphore's initial
+ value to 1 (so it essentially becomes a mutex lock), or add a mutex lock
+ around the critical section.
+ Only then would the program work as intended.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Classic Problems of Synchronization
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following solution to the producer consumer problem
+ from Silberschatz:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//shared data.
+ [Operating Systems Concepts by Silberschatz.]
+\end_layout
+
+\begin_layout Plain Layout
+
+int n;
+\end_layout
+
+\begin_layout Plain Layout
+
+//also a buffer data structure
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore buf_mutex = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore empty = n;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore full = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This solution to the producer consumer problem with a bounded buffer requires
+ three semaphores - can the problem be solved with less? Explain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Sure.
+ We only need to use one semaphore to guard a critical section that is basically
+ the entire producer or consumer.
+ That is, instead of invidually managing resources with a semaphore, we
+ just need a single one to act as a lock which guards empty/full/buffer/fill/use.
+ The downside is that the producer and consumer won't be able to execute
+ at the same time, they will have to take turns obtaining the global lock.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following code which uses a semaphore to solve the
+ reader-writer problem:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//writer process.
+ [Operating Systems Concepts by Silberschatz.]
+\end_layout
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    /* writing is performed */
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+} while (true);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//reader process
+\end_layout
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    read_count++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (read_count == 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    /* reading is performed */
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    read_count--;  //THIS LINE
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (read_count == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+} while (true);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Explain
+\series default
+ how the program would act differently if the indicated line was commented
+ out.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Removing the decrement for 
+\shape italic
+read_count
+\shape default
+ means that the program never becomes aware when a reader is finished reading.
+ 
+\shape italic
+rw_mutex
+\shape default
+ guards writing, where a given process cannot write if there is already
+ another process writing, or if one or more processes are reading from the
+ file.
+ This means as soon as the first reader starts reading, then no process
+ will ever get to write again (since it will always get stuck waiting on
+ 
+\shape italic
+rw_mutex
+\shape default
+).
+ Reading the file would never be a problem as this code allows for any number
+ of readers to read the file at a time.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] The bounded buffer problem is a result of producing and consuming
+ work asynchronously at different and/or variable rates.
+ Provided below is are the producer and consumer functions used by a program:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int data[15], i0 = 0, i1 = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s1 = ...
+ ;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s2 = ...
+ ;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s3 = ...
+ ;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void producer() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        data[i0] = i0 * i0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        i0 = ++i0 % 15;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void consumer() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf(
+\begin_inset Quotes eld
+\end_inset
+
+%d
+\backslash
+n
+\begin_inset Quotes erd
+\end_inset
+
+, data[i1]);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        i1 = ++i1 % 15;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Asume that the producer and consumer are running in parallel.
+ In order to solve the bounded buffer problem demonstrated here, the appropriate
+ calls to wait and signal need to be added.
+ Rewrite the above code using wait and signal and initialize the 3 semaphores
+ to the appropriate values (Note: you must use all three semaphores at least
+ once in your calls to wait and signal).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 8cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int data[15], i0 = 0, i1 = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s1 = 1; // mutex
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s2 = 15; // empty
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s3 = 0; // full
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void producer() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(s2);
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        data[i0] = i0 * i0;
+\end_layout
+
+\begin_layout Plain Layout
+
+        i0 = ++i0 % 15;
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(s3);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void consumer() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(s3);
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf(
+\begin_inset Quotes eld
+\end_inset
+
+%d
+\backslash
+n
+\begin_inset Quotes erd
+\end_inset
+
+, data[i1]);
+\end_layout
+
+\begin_layout Plain Layout
+
+        i1 = ++i1 % 15;
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(s2);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Monitors
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the monitor based solution we had for the dining philosophers
+ problem:
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+monitor DiningPhilosophers {
+\end_layout
+
+\begin_layout Plain Layout
+
+	enum { THINKING; HUNGRY, EATING) state[5];
+\end_layout
+
+\begin_layout Plain Layout
+
+	cond_t self[5];
+\end_layout
+
+\begin_layout Plain Layout
+
+	void pickup(int i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	    state[i] = HUNGRY;
+\end_layout
+
+\begin_layout Plain Layout
+
+	    test(i);
+\end_layout
+
+\begin_layout Plain Layout
+
+	    if (state[i] != EATING)
+\end_layout
+
+\begin_layout Plain Layout
+
+	        self[i].wait();
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	void putdown(int i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	    state[i] = THINKING;
+\end_layout
+
+\begin_layout Plain Layout
+
+	    // test left and right neighbors
+\end_layout
+
+\begin_layout Plain Layout
+
+	    test((i + 4) % 5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	    test((i + 1) % 5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	void test(int i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	    if ((state[(i + 4) % 5] != EATING) &&   //AND --> OR
+\end_layout
+
+\begin_layout Plain Layout
+
+	        (state[i] == HUNGRY) &&             //AND --> OR
+\end_layout
+
+\begin_layout Plain Layout
+
+	        (state[(i + 1) % 5] != EATING)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	            state[i] = EATING;
+\end_layout
+
+\begin_layout Plain Layout
+
+	            self[i].signal();
+\end_layout
+
+\begin_layout Plain Layout
+
+	    }
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	void initialization_code() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	    for (int i = 0; i < 5; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+	        state[i] = THINKING;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+How would the functionality of this change if the conditional in test()
+ used || instead of &&? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+The 
+\shape italic
+test
+\shape default
+ function determines whether philosopher 'i' can eat by checking whether
+ each of their neighbors are eating, and whether philosopher 'i' is hungry.
+ By changing the condition to || instead of &&, then a philosopher can start
+ eating when they're hungry even if one or both of their neighbors are eating.
+ Also, even if one or both of neighbors aren't eating, they can start eating
+ even if they're not hungry.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Synchronization Examples
+\end_layout
+
+\begin_layout Section
+Alternative Approaches
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Synchronization related issues that we have covered so far (readers-w
+riters, critical section, bounded buffer) are issues that can be problematic
+ if not properly dealt with.
+ Consider a functional programming language as opposed to a procedural one
+ like C; would you have to deal with these problems in the same manner or
+ at all? Justify your answer for all three of the previously mentioned issues.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+No, the afformentioned issues in a functional programming language wouldn't
+ exist because they all are state dependent.
+ Functional programming explicitly prohibits changing state, therefore these
+ issues wouldn't carry over.
+ The readers-writers problem goes away because reading data in parallel
+ is fine and writing can never be an issue.
+ The bounded buffer problem isn't an issue anymore because you wouldn't
+ be able to write to a buffer in such an instance.
+ Finally the critical section problem would cease to be an issue as having
+ only non-mutable data means that it shouldn't be possible to have changing
+ state during the execution of a separate process which would otherwise
+ be problematic.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

@@ -1,0 +1,1759 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\size huge
+SER 334 
+\series bold
+Practice
+\series default
+ Exam 2
+\end_layout
+
+\begin_layout Standard
+\align center
+Updated 4/12/2022
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+NOT FOR STUDENT DISTRIBUTION
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Last Name: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rule{6cm}{0.15mm}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First Name: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rule{5.94cm}{0.15mm}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Last 4 digits of ASU ID: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rule{4.05cm}{0.15mm}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Exam Instructions
+\end_layout
+
+\begin_layout Standard
+The exam is open one note card (3x5 inches).
+  
+\bar under
+No electronic items are allowed.
+ Write legibly.
+
+\bar default
+ Please use a pen (instead of a pencil) if you have one.
+ There are 90 points available and the exam must be completed in 37.5 minutes.
+ This exam has two types of questions:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Multiple choice questions:
+\series default
+ There are 30 points of multiple choice questions.
+ An answer is selecting one option among the choices given.
+ Each multiple choice is worth 2 to 5 points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Short answer questions:
+\series default
+ There are 40 points of short answer questions.
+ A typical answer is two or three sentences.
+ Each short answer question is worth ~10 points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Scenario questions:
+\series default
+ The programming questions are given near the end of the paper.
+ They must be answered on the question paper.
+ There are 0 points of write-in programming questions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Topic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\;\;\;\;$
+\end_inset
+
+
+\begin_inset Formula $\;\;$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Possible
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Processes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SA: Processes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Threads
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Process Synchronization I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SA: Process Synchronization I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Process Synchronization II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scen: Threads
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scen: Process Synchronization
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+70
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Processes
+\end_layout
+
+\begin_layout Enumerate
+Imagine that you are trying to write a program that performs a data-intensive
+ computation, and which needs to support some level of recoverability.
+ Would you be better off using shared data or message passing? Explain.
+ [5 points] [Acuña, Pilcher]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Shared data – because every thread has individual access to the memory
+\end_layout
+
+\begin_layout Enumerate
+Message passing – because there will be a record of each message sent which
+ can be saved 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Shared data – because it would require less memory to be used than message
+ passing
+\end_layout
+
+\begin_layout Enumerate
+Message passing – because if a message gets corrupted, it only affects one
+ other process
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Trace the following program.
+ As pids come into existence, assume they come from the following list:
+ 2600, 2601, 2602, 2603, and so on.
+ [Acuña, Silberschatz]
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+   pid_t pid, pid1;
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+   pid = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+   if (pid == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+       pid1 = getpid();
+\end_layout
+
+\begin_layout Plain Layout
+
+       printf("child: pid = %d", pid); /* A */
+\end_layout
+
+\begin_layout Plain Layout
+
+       printf("child: pid1 = %d", pid1); /* B */
+\end_layout
+
+\begin_layout Plain Layout
+
+   }
+\end_layout
+
+\begin_layout Plain Layout
+
+   else {
+\end_layout
+
+\begin_layout Plain Layout
+
+       pid1 = getpid();
+\end_layout
+
+\begin_layout Plain Layout
+
+       printf("parent: pid = %d", pid); /* C */
+\end_layout
+
+\begin_layout Plain Layout
+
+       printf("parent: pid1 = %d", pid1); /* D */
+\end_layout
+
+\begin_layout Plain Layout
+
+       wait(NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+   }
+\end_layout
+
+\begin_layout Plain Layout
+
+   return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+From the program above, identify the values of the process ids at lines
+ A, B, C, and D.
+ [10 points]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 1
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans:
+\end_layout
+
+\begin_layout Standard
+A: 0
+\end_layout
+
+\begin_layout Standard
+B: 2601
+\end_layout
+
+\begin_layout Standard
+C: 2601
+\end_layout
+
+\begin_layout Standard
+D: 2600
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Trace the previous program and then list all of the possible outputs (just
+ write the A/B/C/D text; no need for pids) that could be generated.
+ (Assume that fork will always succeed.) [10 points] [Acuña]
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS: 
+\series default
+ABCD, ACDB, ACBD, CABD, CDAB, CADB
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Threads
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the following program.
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    pid_t pid;
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+    pid = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (pid == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+        thread_create(...);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    thread_create(...);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+How many unique threads are created in the program above? [5 points] [Acuña,
+ Silberschatz]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+2
+\end_layout
+
+\begin_layout Enumerate
+3
+\end_layout
+
+\begin_layout Enumerate
+4
+\end_layout
+
+\begin_layout Enumerate
+5 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Is it faster to switch between processes or threads within those processes?
+ Explain.
+ [5 points] [Acuña]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Processes - they are permanently assigned to a specific CPU so switching
+ never occurs.
+\end_layout
+
+\begin_layout Enumerate
+Processes - they have kernel level privileges to access the PCB handling
+ functions.
+\end_layout
+
+\begin_layout Enumerate
+Threads - they don't require the call stack to be saved/restored since the
+ memory is shared among all threads for a given process.
+\end_layout
+
+\begin_layout Enumerate
+Threads - they are light weight and don't require saving/restoring many
+ resources.
+ 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Process Synchronization I
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the task of implementing a mutex, specifically the unlock functionality
+ (like is supported by “int pthread_mutex_unlock(pthread_mutex_t *mutex)”).
+ Which data structure would you prefer to use to determine the next waiting
+ process to wake up? [5 points] [Acuña]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Hash tables - it will mean it's O(1) to find the next process.
+\end_layout
+
+\begin_layout Enumerate
+Binary Tree - it mimics the parent-child relationships that are created
+ by calls to fork().
+\end_layout
+
+\begin_layout Enumerate
+Stack - it dynamically resizes unlike the other data structures.
+\end_layout
+
+\begin_layout Enumerate
+Queue - it would also enable the mutex to support bounded waiting time.
+ 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Enumerate
+Peterson's solution assumes that loads/stores are atomic.
+ If loads/stores were not atomic, what requirements would Peterson's solution
+ fail to achieve in solving the critical section problem? [Pilcher]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Mutual Exclusion
+\end_layout
+
+\begin_layout Enumerate
+Progress
+\end_layout
+
+\begin_layout Enumerate
+Bounded Waiting
+\end_layout
+
+\begin_layout Enumerate
+Peterson's solution would still solve the critical section problem without
+ loads/stores
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+In pthreads, mutex support involves three functions and a new type:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+typedef pthread_mutex_t
+\end_layout
+
+\begin_layout Plain Layout
+
+int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t
+ *attr);
+\end_layout
+
+\begin_layout Plain Layout
+
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+int pthread_mutex_unlock(pthread_mutex_t *mutex); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+How does this functionality address (or does not address) the issues of
+ Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points] [Acuña]
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\series default
+: pthread_mutex_lock guarantees Mutual Exclusion since it ensures only one
+ thread/process can enter the critical section at a time.
+ Although the implementation may vary, pthread_mutex_unlock partially ensures
+ Progress and Bounded Waiting Time; it's possible that a thread forgets
+ to unlock a mutex, which would starve other threads waiting on that mutex.
+ Additionally, implementations may schedule threads waiting to acquire a
+ lock in an inefficient manner (eg, one thread has a higher priority than
+ others, so it always acquires the lock, starving other threads).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The following code snippet models a user checking out a book from a library:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct Book{
+\end_layout
+
+\begin_layout Plain Layout
+
+    char* title;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int user;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int is_checked_out;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void check_out(int userId, int book_num, Book* books){
+\end_layout
+
+\begin_layout Plain Layout
+
+    Book book = books[book_num];
+\end_layout
+
+\begin_layout Plain Layout
+
+    while(book.is_checked_out);
+\end_layout
+
+\begin_layout Plain Layout
+
+    book.is_checked_out = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    book.user = userId;
+\end_layout
+
+\begin_layout Plain Layout
+
+    books[book_num] = book;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If this code were to be used in a multithreaded program (where multiple
+ users/threads may try to check out books at the same time) would there
+ be a race condition? If so, describe this race condition.
+ Assume that the book being processed is initally not checked out.
+ (The state is the contents of the books array after use of this function.)
+ [10 points] [Edgar]
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\series default
+: Yes, a race condition occurs on the last line in the check_out function.
+ The problem starts when multiple threads create a local copy of books[book_num]
+ (first line in the function).
+ As a result, multiple threads would see that 
+\begin_inset Quotes eld
+\end_inset
+
+book.is_checked_out
+\begin_inset Quotes erd
+\end_inset
+
+ is false, and check out the book.
+ However, the second thread to write back to the array will have the final
+ say (it will override the first thread).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Process Synchronization II
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+How does a monitor function differently from a semaphore? [5 points] [Pilcher]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+a monitor only allows one process to be in its queue at a time while a semaphore
+ allows multiple processes 
+\end_layout
+
+\begin_layout Enumerate
+a monitor and a semaphore function the same except a monitor is represented
+ as a class
+\end_layout
+
+\begin_layout Enumerate
+a monitor allows a set number of processes to be active at a time while
+ a semaphore only allows one process to be active at a time
+\end_layout
+
+\begin_layout Enumerate
+a monitor allows one process to be active at a time while a semaphore can
+ allow multiple processes to be active at the same time 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the semaphore based solution we had for the reader-writer problem:
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+semaphore rw_mutex = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore rc_mutex = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+int read_count = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//writer process
+\end_layout
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    /* writing is performed */
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+} while (true);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//reader process
+\end_layout
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    read_count++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (read_count == 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    /* reading is performed */
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    read_count--;
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (read_count == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+} while (true);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+What functionality does the logic involving read_count and rc_mutex provide?
+ [5 points] [Acuña, Pilcher]
+\end_layout
+
+\begin_layout Enumerate
+It guarantees there is never a negative amount of readers
+\end_layout
+
+\begin_layout Enumerate
+It ensures there is only one writer process at one time
+\end_layout
+
+\begin_layout Enumerate
+It allows multiple processes to read at the same time 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+It ensures only one process can read at a time
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Extra Questions
+\end_layout
+
+\begin_layout Standard
+The following questions were used on previous practice exams - they are
+ not part of the practice exam, and may use content not covered in the current
+ semester, but are provided for additional practice.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+Short Answer: Process Synchronization II
+\end_layout
+
+\begin_layout Enumerate
+(This question is maybe a little harder than what you will see on the real
+ exam.) The following code snippet models a user checking out a book from
+ a library.
+ This time, up to 3 users may check out a single book:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct Book{
+\end_layout
+
+\begin_layout Plain Layout
+
+    char* title;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int users[2]; 
+\end_layout
+
+\begin_layout Plain Layout
+
+    int user_num;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void check_out(int userId, int book_num, Book* books){
+\end_layout
+
+\begin_layout Plain Layout
+
+    Book book = books[book_num];
+\end_layout
+
+\begin_layout Plain Layout
+
+    while(book.user_num >= 3);
+\end_layout
+
+\begin_layout Plain Layout
+
+    book.users[book.user_num] = userId;
+\end_layout
+
+\begin_layout Plain Layout
+
+    book.user_num++; 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+If this were to be used in a multithreaded program, there would be a race
+ condition.
+ Fix the issue with semaphore(s) or mutex(es) as appropriate.
+ [10 points] [Edgar, Acuña]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct Book{
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* title;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int users[2]; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	int user_num;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_mutex_t users_lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+    sem_t copies;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void check_out(int userId, int book_num, Book* books){
+\end_layout
+
+\begin_layout Plain Layout
+
+    sem_wait(&books[book_num].copies);
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_mutex_lock(&books[book_num].users_lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	    Book book = books[book_num];
+\end_layout
+
+\begin_layout Plain Layout
+
+	    book.users[book.user_num] = userId;
+\end_layout
+
+\begin_layout Plain Layout
+
+	    book.user_num++; 
+\end_layout
+
+\begin_layout Plain Layout
+
+        books[book_num] = book;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_mutex_unlock(&books[book_num].users_lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
