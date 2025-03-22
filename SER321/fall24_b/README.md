@@ -1,8 +1,8 @@
 # SER 321 Distributed Software Systems #
 ## Fall 2024 B Session (10/16/24 - 12/6/24) ##
 
-| DATA                       | **SI** | **Non-SI** | **Impact** |
-|----------------------------|--------|------------|------------|
-| **Pass Rate**              | _TBD_  | _TBD_      | _TBD_      |
-| **Avg. Grade Point Value** | _TBD_  | _TBD_      | _TBD_      |
-| **Withdraw Rate**          | _TBD_  | _TBD_      | _TBD_      |
+| DATA                       | **SI** | **Non-SI** | **Impact**                                 |
+|----------------------------|--------|------------|--------------------------------------------|
+| **Pass Rate**              | 85%    | 48.6%      | ${\color{green}\text{&#x2B9D;}}$ **36.4%** |
+| **Avg. Grade Point Value** | 3.2    | 2.01       | ${\color{green}\text{&#x2B9D;}}$ **1.19**  |
+| **Withdraw Rate**          | 5%     | 19%        | ${\color{green}\text{&#x2B9F;}}$ **14%**   |
