@@ -14,7 +14,7 @@ Collection of materials created and used during SI Sessions at Arizona State Uni
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) _No 300-Level SER Courses Offered Fall A Session_  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (B) SER 321: Distributed Software Systems  
 **Spring 2025**  
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) SER 321: Distributed Software Systems
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) SER 321: Distributed Software Systems  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (B) SER 321: Distributed Software Systems
 
 
